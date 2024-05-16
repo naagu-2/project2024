@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Slots</title>
+  <link rel="stylesheet" href="dm.css">
+</head>
+<body>
+  <div class="parking">
+    <h1>Parking Slots</h1>
+    <div class="slots" id="slots">
+      <!-- Parking slots will be added here dynamically -->
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const slotsContainer = document.getElementById('slots');
+  const totalSlots = 15; // Change this according to your requirement
+  const slots = [];
+
+  // Initialize parking slots
+  for (let i = 1; i <= totalSlots; i++) {
+    const slot = document.createElement('div');
+    slot.classList.add('slot', 'available');
+    slot.textContent = i;
+    slot.addEventListener('click', function() {
+      toggleSlotAvailability(i - 1);
+    });
+    slotsContainer.appendChild(slot);
+    slots.push({ id: i, available: true });
+  }
+
+  // Function to toggle slot availability
+  function toggleSlotAvailability(index) {
+    slots[index].available = !slots[index].available;
+    const slot = slotsContainer.children[index];
+    if (slots[index].available) {
+      slot.classList.remove('booked');
+      slot.classList.add('available');
+    } else {
+      slot.classList.remove('available');
+      slot.classList.add('booked');
+    }
+  }
+});
+
+  </script>
+</body>
+</html>
