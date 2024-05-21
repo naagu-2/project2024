@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin-left: 35%;
+    width: 580px;
+}
+
+.parking-lot {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 10px;
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+}
+.parking-lot1 {
+    margin-top: 50PX;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 10px;
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.parking-lot2 {
+    margin-top: 50PX;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 10px;
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.parking-space {
+    width: 100px;
+    height: 150px;
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    position: relative;
+}
+
+.parking-space::before {
+    content: attr(id);
+    
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 16px;
+    color: #7f8c8d;
+}
